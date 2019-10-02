@@ -23,6 +23,11 @@ post "/pizza-orders" do
   erb(:create)
 end
 
+#EDIT ROUTE
+get "/pizza-orders/:id/edit" do
+  erb(:edit)
+end
+
 #SHOW ROUTE
 get "/pizza-orders/:id" do
   @order = PizzaOrder.find(params["id"])
