@@ -33,7 +33,8 @@ end
 get "/pizza-orders/:id/delete" do
   @order = PizzaOrder.find(params["id"])
   @order.delete()
-  erb(:delete)
+  redirect "/pizza-orders"
+
 end
 
 #UPDATE ROUTE
