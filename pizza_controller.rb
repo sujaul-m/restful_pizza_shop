@@ -29,12 +29,20 @@ get "/pizza-orders/:id/edit" do
   erb(:edit)
 end
 
+#DELETE ROUTE - above update route as /delete wont be found after dynamic id if this is put under update
+get "/pizza-orders/:id/delete" do
+  @order = PizzaOrder.find(params["id"])
+  @order.delete()
+  erb(:delete)
+end
+
 #UPDATE ROUTE
 post "/pizza-orders/:id" do
   @order = PizzaOrder.new(params)
   @order.update()
   erb(:update)
 end
+
 
 #SHOW ROUTE
 get "/pizza-orders/:id" do

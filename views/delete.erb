@@ -1,0 +1,6 @@
+<form action='/pizza-orders/:id/delete<%= @order.id %>' method='POST'>
+    <input type='hidden' name='hidden' value='DELETE'/>
+    <button type='submit' class='delete'>X</button>
+  </form>
+
+<% redirect "/pizza-orders" %>
