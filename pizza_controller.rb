@@ -30,7 +30,7 @@ get "/pizza-orders/:id/edit" do
 end
 
 #DELETE ROUTE - above update route as /delete wont be found after dynamic id if this is put under update
-get "/pizza-orders/:id/delete" do
+post "/pizza-orders/:id/delete" do
   @order = PizzaOrder.find(params["id"])
   @order.delete()
   redirect "/pizza-orders"
