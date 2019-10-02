@@ -25,7 +25,15 @@ end
 
 #EDIT ROUTE
 get "/pizza-orders/:id/edit" do
+  @order = PizzaOrder.find(params["id"])
   erb(:edit)
+end
+
+#UPDATE ROUTE
+post "/pizza-orders/:id" do
+  @order = PizzaOrder.new(params)
+  @order.update()
+  erb(:update)
 end
 
 #SHOW ROUTE
